@@ -1,108 +1,705 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071511">
-  <meta name="description" content="Sham Athletics — أكاديمية وخدمات رياضية، مستلزمات، فعاليات وحوكمة.">
-  <title>SHAM Athletics | نصنع الأبطال</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHAM Athletics | سهم</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #061D3A;
+  --navy2: #0A2A4C;
+  --burgundy: #B70F35;
+  --white: #F7F7F7;
+  --gray: #B9C5D2;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Alexandria', sans-serif;
+}
+
+a { text-decoration: none; color: inherit; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6%;
+  background: rgba(6,29,58,.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #ffffff20;
+}
+
+.logo {
+  width: 130px;
+  height: 58px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+nav a {
+  font-size: 12px;
+  transition: color .3s;
+}
+
+nav a:hover { color: #E51B48; }
+
+.menu {
+  display: none;
+  background: none;
+  color: white;
+  border: 1px solid #ffffff40;
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+.hero {
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(270deg, #061D3A 5%, #061D3Ad9 40%, #061D3A25 100%),
+    url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.hero-content {
+  max-width: 680px;
+  padding: 70px 8%;
+  animation: appear 1.2s ease both;
+}
+
+.eyebrow {
+  color: #E51B48;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.5;
+  margin: 20px 0;
+}
+
+h1 span, h2 span { color: #E51B48; }
+
+.hero p {
+  color: var(--gray);
+  max-width: 520px;
+  line-height: 2.2;
+  font-size: 14px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 25px;
+  margin-top: 20px;
+  background: var(--burgundy);
+  color: white;
+  border: 1px solid var(--burgundy);
+  transition: .3s;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.button:hover {
+  background: transparent;
+  transform: translateY(-3px);
+}
+
+section { scroll-margin-top: 85px; }
+
+.section {
+  padding: 90px 7%;
+}
+
+.section-title {
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: clamp(28px, 4vw, 45px);
+  margin: 10px 0;
+}
+
+.section-title p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: var(--navy2);
+  border: 1px solid #ffffff18;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--burgundy);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.card:hover img { transform: scale(1.05); }
+
+.card-content { padding: 22px; }
+
+.card h3 { font-size: 17px; }
+
+.card p {
+  font-size: 12px;
+  line-height: 2;
+  color: var(--gray);
+}
+
+.card a {
+  color: #F04463;
+  font-size: 12px;
+}
+
+.academy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #F7F7F7;
+  color: var(--navy);
+}
+
+.academy img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+}
+
+.academy-content {
+  padding: 55px 8%;
+  align-self: center;
+}
+
+.academy-content h2 {
+  font-size: clamp(28px, 4vw, 43px);
+  line-height: 1.7;
+}
+
+.academy-content p {
+  font-size: 13px;
+  line-height: 2.3;
+  color: #536173;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.features div {
+  border-top: 1px solid #D7DDE4;
+  padding: 13px 0;
+  font-size: 12px;
+}
+
+.features b { color: var(--burgundy); }
+
+.equipment-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.equipment {
+  background: #0A2A4C;
+  padding: 24px;
+  border-right: 3px solid var(--burgundy);
+  transition: .3s;
+}
+
+.equipment:hover {
+  background: #10385E;
+  transform: translateY(-4px);
+}
+
+.equipment h3 { font-size: 16px; }
+
+.equipment p {
+  color: var(--gray);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.events {
+  background:
+    linear-gradient(#061D3Ae8, #061D3Ae8),
+    url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85')
+    center/cover fixed;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.event {
+  padding: 30px;
+  background: #ffffff0b;
+  border: 1px solid #ffffff30;
+  transition: .3s;
+}
+
+.event:hover {
+  border-color: var(--burgundy);
+  background: #ffffff12;
+}
+
+.event h3 { font-size: 20px; }
+
+.event p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.governance {
+  background: #F7F7F7;
+  color: var(--navy);
+}
+
+.governance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.governance-item {
+  padding: 25px;
+  border: 1px solid #DDE1E6;
+  transition: .3s;
+}
+
+.governance-item:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-4px);
+}
+
+.governance-item h3 { font-size: 15px; }
+
+.governance-item p {
+  font-size: 12px;
+  line-height: 2;
+  color: #596779;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+}
+
+.contact-grid p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 2.3;
+}
+
+form { display: grid; gap: 14px; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  color: white;
+  background: var(--navy2);
+  border: 1px solid #ffffff30;
+  font: inherit;
+  font-size: 12px;
+  border-radius: 0;
+}
+
+textarea { resize: vertical; }
+
+form .button { cursor: pointer; }
+
+footer {
+  padding: 30px 6%;
+  text-align: center;
+  border-top: 1px solid #ffffff20;
+  color: var(--gray);
+  font-size: 11px;
+  line-height: 2.5;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s, transform .8s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 900px) {
+  nav { gap: 12px; }
+  nav a { font-size: 10px; }
+  .services { grid-template-columns: 1fr 1fr; }
+}
+
+@media(max-width: 650px) {
+  header { padding: 10px 5%; }
+  .logo { width: 105px; height: 48px; }
+  .menu { display: block; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    background: var(--navy);
+    flex-direction: column;
+    align-items: stretch;
+  }
+  nav.open { display: flex; }
+  nav a { font-size: 13px; padding: 7px; }
+  .hero { min-height: 600px; background-position: 40% center; }
+  .hero-content { padding: 60px 6%; }
+  .services { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card img { height: 140px; }
+  .card-content { padding: 14px; }
+  .card h3 { font-size: 14px; }
+  .academy, .contact-grid { grid-template-columns: 1fr; }
+  .academy img { min-height: 280px; max-height: 340px; }
+  .section { padding: 60px 5%; }
+  .equipment-list, .events-grid, .governance-grid { grid-template-columns: 1fr; }
+  .academy-content { padding: 35px 6%; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
 </head>
+
 <body>
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="SHAM Athletics الرئيسية">
-      <svg class="brand-mark" viewBox="0 0 54 48" aria-hidden="true">
-        <path d="M7 28 23 5h12L19 28H7Zm12 15 16-23h12L31 43H19Zm-8-7 6-9h12l-6 9H11Z" fill="currentColor"/>
-        <path d="m29 5 7 0-4 6h-7l4-6Zm-9 14h12l-4 6H16l4-6Z" fill="#9ACB9D"/>
-      </svg>
-      <span class="brand-word">SHAM <small>ATHLETICS</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="القائمة الرئيسية">
-      <a class="active" href="#top">الرئيسية</a><a href="#about">من نحن</a><a href="#academy">الأكاديمية</a>
-      <a href="#services">خدماتنا</a><a href="#events">الفعاليات</a><a href="#governance">الحوكمة</a><a href="#contact">تواصل معنا</a>
-    </nav>
-    <div class="header-actions"><a class="lang" href="#contact">AR <span>| EN</span></a><button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة"><span></span><span></span></button></div>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="hero-image"></div><div class="hero-shade"></div>
-      <div class="hero-side-note">SPORTS<br>BUILD<br>TOMORROW</div>
-      <div class="hero-content reveal">
-        <p class="eyebrow"><i></i> SHAM ATHLETICS · منذ البداية نحو التميّز</p>
-        <h1>أكثر من مجرد رياضة…<br><em>نصنع الأبطال.</em></h1>
-        <p class="hero-copy">منصة رياضية متكاملة تجمع الأكاديمية، والمستلزمات، والفعاليات، والحوكمة؛ لنمنح المواهب مساحة تنمو فيها بثقة.</p>
-        <div class="hero-buttons"><a class="btn btn-light" href="#academy">اكتشف الأكاديمية <span></span></a><a class="text-link" href="#services"><span class="play"></span> استكشف خدماتنا</a></div>
+
+<header>
+  <a href="#home">
+    <img class="logo" src="assets/sham-logo.jpeg" alt="شعار سهم">
+  </a>
+
+  <button class="menu" id="menuButton" aria-label="فتح القائمة">☰</button>
+
+  <nav id="navigation">
+    <a href="#home">الرئيسية</a>
+    <a href="#academy">الأكاديمية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#equipment">المستلزمات</a>
+    <a href="#events">الفعاليات</a>
+    <a href="#governance">الحوكمة</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">SHAM ATHLETICS</div>
+    <h1>نصنع اليوم<br><span>أبطال الغد.</span></h1>
+    <p>
+      وجهتك الرياضية المتكاملة؛ من تطوير المواهب في الأكاديمية،
+      إلى توفير المعدات وتنظيم الفعاليات ضمن بيئة رياضية احترافية.
+    </p>
+    <a class="button" href="#academy">اكتشف الأكاديمية</a>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-title reveal">
+    <div class="eyebrow">WHAT WE DO</div>
+    <h2>كل احتياجاتك الرياضية <span>في مكان واحد.</span></h2>
+    <p>خدمات متكاملة للأفراد والأكاديميات والفرق والجهات.</p>
+  </div>
+
+  <div class="services">
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80" alt="تدريب كرة القدم" loading="lazy">
+      <div class="card-content">
+        <h3>الأكاديمية الرياضية</h3>
+        <p>تدريب وتطوير المهارات واللياقة والعمل الجماعي للأطفال والناشئين.</p>
+        <a href="#academy">اكتشف البرامج</a>
       </div>
-      <div class="hero-bottom"><span>01 / 04</span><span class="hero-line"></span><span>نؤمن بقوة الرياضة في بناء المستقبل</span></div>
-      <a class="scroll-cue" href="#services">اكتشف المزيد <span>↓</span></a>
-    </section>
+    </article>
 
-    <section class="quick-cards section-wrap" id="services">
-      <a class="quick-card reveal" href="#academy"><div class="card-photo photo-academy"></div><div class="card-icon">↗</div><div class="quick-info"><span class="card-kicker">01 / TRAINING</span><h3>الأكاديمية</h3><p>برامج تدريبية وتطوير للمواهب بإشراف مدربين.</p><span class="card-arrow">←</span></div></a>
-      <a class="quick-card reveal" href="#equipment"><div class="card-photo photo-equipment"></div><div class="card-icon">↗</div><div class="quick-info"><span class="card-kicker">02 / EQUIPMENT</span><h3>المستلزمات والمعدات</h3><p>كل ما تحتاجه الأكاديميات والفرق في مكان واحد.</p><span class="card-arrow">←</span></div></a>
-      <a class="quick-card reveal" href="#events"><div class="card-photo photo-events"></div><div class="card-icon">↗</div><div class="quick-info"><span class="card-kicker">03 / EVENTS</span><h3>الفعاليات</h3><p>بطولات ومعسكرات وتجارب رياضية تجمع المجتمع.</p><span class="card-arrow">←</span></div></a>
-      <a class="quick-card reveal" href="#governance"><div class="card-photo photo-governance"></div><div class="card-icon">↗</div><div class="quick-info"><span class="card-kicker">04 / GOVERNANCE</span><h3>الحوكمة</h3><p>سياسات واضحة وإدارة مسؤولة وشفافية مؤسسية.</p><span class="card-arrow">←</span></div></a>
-    </section>
-
-    <section class="academy-section" id="academy">
-      <div class="academy-photo reveal"><div class="photo-caption"><span>SHAM</span><span>ACADEMY</span></div><div class="photo-stamp">DISCIPLINE<br>BUILDS<br>GREATNESS</div></div>
-      <div class="academy-copy reveal"><p class="eyebrow dark-eyebrow">01 — SHAM ACADEMY</p><h2>كل موهبة تستحق<br><em>فرصة للانطلاق.</em></h2><p>برامج رياضية مصممة لتطوير المهارات، وتعزيز الثقة والعمل الجماعي، في بيئة تشجّع الأطفال والناشئين على النمو والاستمتاع بالحركة.</p>
-        <div class="academy-points"><div><b>01</b><span>برامج تدريبية متنوعة</span></div><div><b>02</b><span>تطوير المهارات واللياقة</span></div><div><b>03</b><span>مدربون ومرافق مناسبة</span></div><div><b>04</b><span>متابعة وتقييم مستمر</span></div></div>
-        <a class="btn btn-dark" href="#contact">استفسر عن التسجيل <span></span></a>
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?auto=format&fit=crop&w=700&q=80" alt="معدات رياضية" loading="lazy">
+      <div class="card-content">
+        <h3>المعدات والمستلزمات</h3>
+        <p>أدوات التدريب والكرات والزي الرياضي واحتياجات الفرق والأكاديميات.</p>
+        <a href="#equipment">استكشف التجهيزات</a>
       </div>
-    </section>
+    </article>
 
-    <section class="equipment-section section-wrap" id="equipment">
-      <div class="section-heading reveal"><div><p class="eyebrow">02 — YOUR SPORTS PARTNER</p><h2>كل ما تحتاجه، <em>من مكان واحد.</em></h2></div><p>من احتياجات التدريب اليومية إلى تجهيزات الأكاديميات والفرق — أرسل طلبك ودعنا نساعدك في الوصول إلى الخيار المناسب.</p></div>
-      <div class="equipment-layout">
-        <div class="equipment-visual reveal"><img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=85" alt="كرة قدم ومعدات رياضية على أرض الملعب" loading="lazy"><div class="visual-label">GEAR UP. PLAY ON.</div></div>
-        <div class="equipment-list reveal">
-          <a href="#contact" class="equipment-item"><span class="item-number">01</span><span><b>معدات التدريب</b><small>كرات، أقماع، حواجز، سلالم رشاقة وأدوات لياقة.</small></span><span class="item-arrow"></span></a>
-          <a href="#contact" class="equipment-item"><span class="item-number">02</span><span><b>الزي والملابس الرياضية</b><small>أطقم الفرق، ملابس التدريب والاحتياجات المخصصة.</small></span><span class="item-arrow"></span></a>
-          <a href="#contact" class="equipment-item"><span class="item-number">03</span><span><b>تجهيز الأكاديميات والملاعب</b><small>مستلزمات وتجهيزات حسب طبيعة المكان والاحتياج.</small></span><span class="item-arrow"></span></a>
-          <a href="#contact" class="equipment-item"><span class="item-number">04</span><span><b>طلبات الجهات والفرق</b><small>طلبات الكميات وعروض الأسعار والتوريد للجهات.</small></span><span class="item-arrow"></span></a>
-          <a class="btn btn-outline" href="#contact">اطلب مستلزماتك <span></span></a>
-        </div>
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=80" alt="فعالية رياضية" loading="lazy">
+      <div class="card-content">
+        <h3>الفعاليات والبطولات</h3>
+        <p>بطولات ومعسكرات وأيام رياضية للمدارس والفرق والمجتمع.</p>
+        <a href="#events">اكتشف الفعاليات</a>
       </div>
-    </section>
+    </article>
 
-    <section class="events-section" id="events">
-      <div class="events-backdrop"></div><div class="events-inner section-wrap">
-        <div class="events-intro reveal"><p class="eyebrow">03 — BE PART OF IT</p><h2>لحظات تجمعنا.<br><em>وإنجازات تلهمنا.</em></h2><p>نصنع تجارب رياضية تُشعل الحماس وتفتح المجال للمواهب كي تتألق — من البطولات إلى المعسكرات والأنشطة المجتمعية.</p><a class="btn btn-light" href="#contact">نظّم فعالية معنا <span></span></a></div>
-        <div class="event-feature reveal"><img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=85" alt="مباراة كرة قدم في ملعب" loading="lazy"><div class="event-overlay"><span>SHAM EVENTS</span><h3>البطولات والمعسكرات</h3><p>من الفكرة إلى صافرة البداية.</p></div><div class="event-index">03 <span>/ 04</span></div></div>
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="إدارة مؤسسية" loading="lazy">
+      <div class="card-content">
+        <h3>الحوكمة</h3>
+        <p>سياسات تنظيمية ووضوح في المسؤوليات ومبادئ النزاهة والشفافية.</p>
+        <a href="#governance">تعرف على الحوكمة</a>
       </div>
-    </section>
+    </article>
+  </div>
+</section>
 
-    <section class="governance-section" id="governance">
-      <div class="governance-image reveal"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="مساحة عمل واجتماعات مؤسسية" loading="lazy"><span>BUILT ON TRUST</span></div>
-      <div class="governance-copy reveal"><p class="eyebrow dark-eyebrow">04 — GOVERNANCE & TRANSPARENCY</p><h2>التميّز يبدأ<br><em>بإدارة مسؤولة.</em></h2><p>نؤمن أن البيئة الرياضية المستدامة تقوم على الوضوح، والمسؤولية، والالتزام. نعمل على إتاحة السياسات والوثائق التنظيمية ذات الصلة بما يعزز الثقة مع المستفيدين والشركاء.</p>
-        <div class="governance-links"><a href="#contact"><span>01</span> السياسات واللوائح <b></b></a><a href="#contact"><span>02</span> الهيكل والمسؤوليات <b></b></a><a href="#contact"><span>03</span> النزاهة والسلوك المهني <b></b></a><a href="#contact"><span>04</span> الشراكات والاستفسارات <b></b></a></div>
-        <a class="btn btn-dark" href="#contact">تواصل للاستفسار <span></span></a>
-      </div>
-    </section>
+<section class="academy" id="academy">
+  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=85" alt="أطفال يمارسون كرة القدم" loading="lazy">
 
-    <section class="contact-section section-wrap" id="contact">
-      <div class="contact-heading reveal"><p class="eyebrow">LET'S MOVE FORWARD</p><h2>عندك فكرة أو احتياج؟<br><em>خلّنا نبدأ الحديث.</em></h2><p>للتسجيل في الأكاديمية، أو طلب المستلزمات، أو التعاون في الفعاليات والشراكات.</p></div>
-      <form class="contact-form reveal" id="contactForm">
-        <label>الاسم الكامل<input name="name" required placeholder="اكتب اسمك"></label>
-        <label>البريد الإلكتروني<input name="email" type="email" required placeholder="name@example.com"></label>
-        <label>نوع الطلب<select name="type" required><option value="">اختر نوع الطلب</option><option>التسجيل في الأكاديمية</option><option>المستلزمات والمعدات الرياضية</option><option>تنظيم فعالية أو بطولة</option><option>شراكة أو تعاون مؤسسي</option><option>استفسار عن الحوكمة</option><option>طلب آخر</option></select></label>
-        <label>تفاصيل الطلب<textarea name="message" rows="3" placeholder="أخبرنا باحتياجك..."></textarea></label>
-        <button class="btn btn-light submit-btn" type="submit">جهّز رسالة الطلب <span></span></button>
-        <p class="form-note">سيتم فتح تطبيق البريد لديك لإرسال الطلب. أضيفوا بريد الجهة في ملف script.js قبل نشر الموقع.</p>
-      </form>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="#top"><svg class="brand-mark" viewBox="0 0 54 48" aria-hidden="true"><path d="M7 28 23 5h12L19 28H7Zm12 15 16-23h12L31 43H19Zm-8-7 6-9h12l-6 9H11Z" fill="currentColor"/></svg><span class="brand-word">SHAM <small>ATHLETICS</small></span></a>
-    <p>معًا نصنع مستقبلًا أكثر نشاطًا.</p><div class="footer-links"><a href="#academy">الأكاديمية</a><a href="#services">خدماتنا</a><a href="#events">الفعاليات</a><a href="#governance">الحوكمة</a><a href="#contact">تواصل معنا</a></div>
-    <small class="copyright">© <span id="year"></span> SHAM Athletics. جميع الحقوق محفوظة.</small>
-  </footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js"></script>
+  <div class="academy-content reveal">
+    <div class="eyebrow">SHAM ACADEMY</div>
+    <h2>كل موهبة تستحق<br><span>فرصة للانطلاق.</span></h2>
+    <p>
+      مساحة رياضية تساعد الأطفال والناشئين على اكتشاف قدراتهم،
+      وتطوير مهاراتهم، وبناء الثقة والانضباط وروح الفريق.
+    </p>
+
+    <div class="features">
+      <div><b>01</b> برامج تدريبية</div>
+      <div><b>02</b> تطوير المهارات</div>
+      <div><b>03</b> لياقة بدنية</div>
+      <div><b>04</b> متابعة الأداء</div>
+    </div>
+
+    <a class="button" href="#contact">استفسر عن التسجيل</a>
+  </div>
+</section>
+
+<section class="section" id="equipment">
+  <div class="section-title reveal">
+    <div class="eyebrow">SPORTS EQUIPMENT</div>
+    <h2>جهّز فريقك <span>للانطلاق.</span></h2>
+    <p>احتياجات الأفراد والمدربين والأكاديميات والجهات الرياضية.</p>
+  </div>
+
+  <div class="equipment-list">
+    <article class="equipment reveal">
+      <h3>معدات التدريب</h3>
+      <p>كرات، أقماع، حواجز، سلالم رشاقة وأدوات اللياقة.</p>
+    </article>
+    <article class="equipment reveal">
+      <h3>الملابس والأطقم</h3>
+      <p>أطقم الفرق وملابس التدريب والزي الرياضي.</p>
+    </article>
+    <article class="equipment reveal">
+      <h3>تجهيز الأكاديميات</h3>
+      <p>مستلزمات الملاعب والمرافق حسب الاحتياج.</p>
+    </article>
+    <article class="equipment reveal">
+      <h3>طلبات الجهات</h3>
+      <p>طلبات الكميات والتجهيزات والاستفسار عن عروض الأسعار.</p>
+    </article>
+  </div>
+
+  <a class="button" href="#contact">اطلب مستلزماتك</a>
+</section>
+
+<section class="section events" id="events">
+  <div class="section-title reveal">
+    <div class="eyebrow">SHAM EVENTS</div>
+    <h2>نجتمع بالرياضة، <span>ونصنع الإنجاز.</span></h2>
+    <p>تجارب رياضية تجمع المواهب والمجتمع وتفتح آفاقًا جديدة.</p>
+  </div>
+
+  <div class="events-grid">
+    <article class="event reveal">
+      <h3>البطولات الرياضية</h3>
+      <p>منافسات منظمة تمنح اللاعبين فرصة لإظهار مهاراتهم وروحهم الرياضية.</p>
+    </article>
+    <article class="event reveal">
+      <h3>المعسكرات التدريبية</h3>
+      <p>برامج مكثفة لتطوير المهارات والانضباط والعمل الجماعي.</p>
+    </article>
+    <article class="event reveal">
+      <h3>الأيام الرياضية</h3>
+      <p>أنشطة تفاعلية للمدارس والجهات والمجتمع.</p>
+    </article>
+    <article class="event reveal">
+      <h3>شراكات الفعاليات</h3>
+      <p>التعاون مع الجهات لتنظيم تجارب رياضية تناسب أهدافها.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section governance" id="governance">
+  <div class="section-title reveal">
+    <div class="eyebrow">GOVERNANCE & TRANSPARENCY</div>
+    <h2>التميّز يبدأ <span>بإدارة مسؤولة.</span></h2>
+    <p>مبادئ تساعد على بناء بيئة رياضية منظمة وموثوقة.</p>
+  </div>
+
+  <div class="governance-grid">
+    <article class="governance-item reveal">
+      <h3>السياسات واللوائح</h3>
+      <p>تنظيم الإجراءات وتوضيح القواعد ذات الصلة بالخدمات والأنشطة.</p>
+    </article>
+    <article class="governance-item reveal">
+      <h3>المسؤوليات والشفافية</h3>
+      <p>وضوح الأدوار وآليات التواصل وتحديد المسؤوليات.</p>
+    </article>
+    <article class="governance-item reveal">
+      <h3>النزاهة والسلوك</h3>
+      <p>تعزيز الاحترام والسلامة والسلوك المهني في البيئة الرياضية.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">CONTACT SHAM</div>
+      <h2>خلّنا نبدأ <span>الحديث.</span></h2>
+      <p>
+        للاستفسار عن الأكاديمية، أو طلب المعدات، أو تنظيم فعالية،
+        أو مناقشة فرصة تعاون وشراكة.
+      </p>
+    </div>
+
+    <form id="contactForm">
+      <input id="name" placeholder="الاسم الكامل" required>
+      <input id="email" type="email" placeholder="البريد الإلكتروني" required>
+
+      <select id="type" required>
+        <option value="">نوع الطلب</option>
+        <option>التسجيل في الأكاديمية</option>
+        <option>المعدات والمستلزمات الرياضية</option>
+        <option>تنظيم فعالية أو بطولة</option>
+        <option>شراكة أو تعاون</option>
+        <option>استفسار عن الحوكمة</option>
+        <option>طلب آخر</option>
+      </select>
+
+      <textarea id="message" rows="4" placeholder="اكتب تفاصيل طلبك"></textarea>
+
+      <button class="button" type="submit">تجهيز رسالة الطلب</button>
+      <p id="formNote" style="font-size:11px"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>SHAM ATHLETICS</strong>
+  <div>نصنع اليوم أبطال الغد.</div>
+  <div>© <span id="year"></span> SHAM Athletics</div>
+</footer>
+
+<script>
+const menuButton = document.getElementById('menuButton');
+const navigation = document.getElementById('navigation');
+
+menuButton.addEventListener('click', () => {
+  navigation.classList.toggle('open');
+});
+
+navigation.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navigation.classList.remove('open'));
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('contactForm').addEventListener('submit', event => {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const type = document.getElementById('type').value;
+  const message = document.getElementById('message').value.trim();
+
+  const subject = encodeURIComponent('طلب جديد - SHAM Athletics');
+  const body = encodeURIComponent(
+    'الاسم: ' + name +
+    '\nالبريد: ' + email +
+    '\nنوع الطلب: ' + type +
+    '\nالتفاصيل: ' + message
+  );
+
+  // استبدلي البريد بالعنوان الرسمي للجهة.
+  const contactEmail = 'YOUR_EMAIL@example.com';
+
+  if (contactEmail === 'YOUR_EMAIL@example.com') {
+    document.getElementById('formNote').textContent =
+      'النموذج جاهز. يلزم إضافة بريد SHAM الرسمي داخل الكود لتفعيل إرسال الطلبات.';
+    return;
+  }
+
+  window.location.href =
+    'mailto:' + contactEmail + '?subject=' + subject + '&body=' + body;
+});
+</script>
+
 </body>
 </html>
