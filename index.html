@@ -561,19 +561,37 @@ footer {
       </p>
     </div>
 
-    <form id="contactForm">
-      <input id="name" placeholder="الاسم الكامل" required>
-      <input id="email" type="email" placeholder="البريد الإلكتروني" required>
 
-      <select id="type" required>
-        <option value="">نوع الطلب</option>
-        <option>تشغيل منشأة رياضية</option>
-        <option>استشارات رياضية</option>
-        <option>تشغيل أكاديمية رياضية</option>
-        <option>تنظيم فعالية رياضية</option>
-        <option>شراكة أو تعاون</option>
-        <option>استفسار آخر</option>
-      </select>
+<form action="https://formsubmit.co/el/rarilo"
+      method="POST">
+
+  <input type="hidden" name="_subject"
+         value="طلب جديد - شركة سهم">
+
+  <input type="hidden" name="_template" value="table">
+
+  <input type="text" name="name"
+         placeholder="الاسم الكامل" required>
+
+  <input type="email" name="email"
+         placeholder="البريد الإلكتروني" required>
+
+  <select name="type" required>
+    <option value="">نوع الطلب</option>
+    <option>تشغيل منشأة رياضية</option>
+    <option>استشارات رياضية</option>
+    <option>تشغيل أكاديمية رياضية</option>
+    <option>تنظيم فعالية رياضية</option>
+    <option>شراكة أو تعاون</option>
+    <option>استفسار آخر</option>
+  </select>
+
+  <textarea name="message" rows="4"
+            placeholder="اكتب تفاصيل طلبك"></textarea>
+
+  <button class="button" type="submit">إرسال الطلب</button>
+</form>
+
 
       <textarea id="message" rows="4" placeholder="اكتب تفاصيل طلبك"></textarea>
 
@@ -634,7 +652,7 @@ document.getElementById('contactForm').addEventListener('submit', event => {
   const contactEmail = 'YOUR_EMAIL@example.com';
 
   if (contactEmail === 'YOUR_EMAIL@example.com') {
-    document.getElementById('formNote').textContent =
+document.getElementById('contactForm').addEventListener('submit'
       'النموذج جاهز. يلزم إضافة بريد الشركة الرسمي داخل الكود لتفعيل إرسال الطلبات.';
     return;
   }
