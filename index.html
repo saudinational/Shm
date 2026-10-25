@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -20,6 +19,7 @@
 html {scroll-behavior:smooth;scroll-padding-top:85px}
 body {margin:0;background:var(--navy);color:var(--white);font-family:'Alexandria',sans-serif}
 a {text-decoration:none;color:inherit}
+
 header {
   position:sticky;top:0;z-index:100;display:flex;
   justify-content:space-between;align-items:center;
@@ -31,6 +31,7 @@ nav {display:flex;gap:20px;align-items:center}
 nav a {font-size:12px;transition:color .3s}
 nav a:hover {color:#E51B48}
 .menu {display:none;background:none;color:white;border:1px solid #ffffff40;padding:8px 12px;font-size:20px;cursor:pointer}
+
 .hero {
   min-height:620px;display:flex;align-items:center;overflow:hidden;
   background:linear-gradient(270deg,#061D3A 5%,#061D3Ad9 45%,#061D3A40 100%),
@@ -43,10 +44,12 @@ h1 span,h2 span {color:#E51B48}
 .hero p {color:var(--gray);max-width:620px;line-height:2.2;font-size:14px}
 .button {display:inline-block;padding:13px 24px;margin-top:15px;background:var(--burgundy);color:white;border:1px solid var(--burgundy);font:inherit;font-size:13px;cursor:pointer;transition:.3s}
 .button:hover {background:transparent;transform:translateY(-3px)}
+
 .section {padding:80px 7%;scroll-margin-top:80px}
 .section-title {margin-bottom:35px}
 .section-title h2 {font-size:clamp(27px,4vw,42px);margin:12px 0}
 .section-title p {color:var(--gray);font-size:13px;line-height:2}
+
 .services {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .card {background:var(--navy2);border:1px solid #ffffff18;overflow:hidden;transition:.3s}
 .card:hover {transform:translateY(-6px);border-color:var(--burgundy)}
@@ -54,6 +57,7 @@ h1 span,h2 span {color:#E51B48}
 .card-content {padding:20px}
 .card h3 {font-size:16px}
 .card p,.equipment p,.event p {font-size:12px;line-height:2.2;color:var(--gray)}
+
 .academy {display:grid;grid-template-columns:1fr 1fr;background:#F7F7F7;color:var(--navy)}
 .academy>img {width:100%;height:100%;min-height:420px;object-fit:cover}
 .academy-content {padding:50px 8%;align-self:center}
@@ -62,24 +66,40 @@ h1 span,h2 span {color:#E51B48}
 .features {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
 .features div {border-top:1px solid #D7DDE4;padding:13px 0;font-size:13px;font-weight:600}
 .features b {color:var(--burgundy)}
+
 .equipment-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .equipment {background:var(--navy2);padding:23px;border-right:3px solid var(--burgundy);transition:.3s}
 .equipment:hover {background:#10385E;transform:translateY(-4px)}
 .equipment h3 {font-size:15px}
+
 .events {background:linear-gradient(#061D3Ae8,#061D3Ae8),url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85') center/cover}
 .events-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .event {padding:28px;background:#ffffff0b;border:1px solid #ffffff30}
 .event h3 {font-size:20px}
+
 .contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .contact-grid p {color:var(--gray);font-size:13px;line-height:2.3}
 form {display:grid;gap:14px}
-input,select,textarea {width:100%;padding:14px;color:white;background:var(--navy2);border:1px solid #ffffff30;font:inherit;font-size:12px;border-radius:0}
-input::placeholder,textarea::placeholder {color:#B9C5D2}
+
+/* تعديل ألوان الإدخال لضمان وضوح الكتابة */
+input, select, textarea {
+  width:100%;
+  padding:14px;
+  color:#ffffff !important;
+  background:var(--navy2);
+  border:1px solid #ffffff30;
+  font:inherit;
+  font-size:12px;
+  border-radius:0;
+}
+input::placeholder, textarea::placeholder {color:#B9C5D2}
 select option {background:var(--navy2);color:white}
 textarea {resize:vertical}
+
 footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:var(--gray);font-size:11px;line-height:2.5}
 .reveal {opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
 .reveal.visible {opacity:1;transform:translateY(0)}
+
 @keyframes appear {from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:950px) {
   nav {gap:10px}
@@ -116,17 +136,10 @@ footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:v
 
 <body>
 
-
 <header>
   <a href="#home">
-    <img
-      class="logo"
-      src="png.سههم"
-      alt="شعار سهم"
-    >
+    <img class="logo" src="png.سههم" alt="شعار سهم">
   </a>
-</header>
-
   <button class="menu" id="menuButton" aria-label="فتح القائمة" aria-expanded="false">☰</button>
   <nav id="navigation">
     <a href="#home">الرئيسية</a>
@@ -227,12 +240,17 @@ footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:v
       <h2>تواصل <span>معنا.</span></h2>
       <p>للاستفسار عن الخدمات الرياضية والاستشارات وتشغيل الأكاديميات والمنشآت أو طلب شراكات وتعاون، أرسل لنا تفاصيل طلبك.</p>
     </div>
+    
+    <!-- النموذج المعدل المربوط مباشرة -->
     <form action="https://formsubmit.co/el/rarilo" method="POST">
-      <input type="hidden" name="_subject" value="طلب جديد - شركة سهم">
+      <input type="hidden" name="_subject" value="طلب جديد من موقع شركة سهم">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="name" placeholder="الاسم الكامل" aria-label="الاسم الكامل" required>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" aria-label="البريد الإلكتروني" required>
-      <select name="type" aria-label="نوع الطلب" required>
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" aria-label="الاسم الكامل" required>
+      <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" aria-label="البريد الإلكتروني" required>
+      
+      <select name="نوع الطلب" aria-label="نوع الطلب" required>
         <option value="">نوع الطلب</option>
         <option value="تشغيل منشأة رياضية">تشغيل منشأة رياضية</option>
         <option value="استشارات رياضية">استشارات رياضية</option>
@@ -241,7 +259,8 @@ footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:v
         <option value="شراكة أو تعاون">شراكة أو تعاون</option>
         <option value="استفسار آخر">استفسار آخر</option>
       </select>
-      <textarea name="message" rows="4" placeholder="اكتب تفاصيل طلبك" aria-label="تفاصيل الطلب"></textarea>
+      
+      <textarea name="تفاصيل الطلب" rows="4" placeholder="اكتب تفاصيل طلبك" aria-label="تفاصيل الطلب"></textarea>
       <button class="button" type="submit">إرسال الطلب</button>
     </form>
   </div>
