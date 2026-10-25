@@ -1,4 +1,4 @@
-// ضع بريد التواصل الرسمي للجهة هنا قبل النشر، مثال: "info@example.com"
+// ضع بريد التواصل الرسمي لشركة سهم هنا قبل النشر، مثال: "info@saham.com"
 const CONTACT_EMAIL = "";
 
 const menuToggle = document.getElementById("menuToggle");
@@ -32,7 +32,7 @@ const toast = document.getElementById("toast");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  const subject = encodeURIComponent("طلب جديد عبر موقع SHAM Athletics — " + data.get("type"));
+  const subject = encodeURIComponent("طلب جديد عبر موقع شركة سهم — " + data.get("type"));
   const body = encodeURIComponent(
     "الاسم: " + data.get("name") + "\n" +
     "البريد: " + data.get("email") + "\n" +
@@ -40,7 +40,7 @@ form.addEventListener("submit", (event) => {
     "التفاصيل:\n" + (data.get("message") || "لا توجد تفاصيل إضافية")
   );
   if (!CONTACT_EMAIL) {
-    toast.textContent = "النموذج جاهز، لكن يلزم إضافة بريد SHAM الرسمي في ملف script.js لتفعيل إرسال الطلبات.";
+    toast.textContent = "النموذج جاهز، لكن يلزم إضافة بريد شركة سهم الرسمي في ملف script.js لتفعيل إرسال الطلبات.";
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 5000);
     return;
