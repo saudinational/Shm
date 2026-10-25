@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHAM Athletics | سهم</title>
+<title>شركة سهم | لإدارة وتشغيل المنشآت الرياضية والأكاديميات والفعاليات</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -97,8 +96,8 @@ nav a:hover { color: #E51B48; }
 }
 
 h1 {
-  font-size: clamp(38px, 6vw, 72px);
-  line-height: 1.5;
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.4;
   margin: 20px 0;
 }
 
@@ -231,14 +230,15 @@ section { scroll-margin-top: 85px; }
 .features div {
   border-top: 1px solid #D7DDE4;
   padding: 13px 0;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .features b { color: var(--burgundy); }
 
 .equipment-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -271,7 +271,7 @@ section { scroll-margin-top: 85px; }
 
 .events-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -293,36 +293,6 @@ section { scroll-margin-top: 85px; }
   color: var(--gray);
   font-size: 13px;
   line-height: 2;
-}
-
-.governance {
-  background: #F7F7F7;
-  color: var(--navy);
-}
-
-.governance-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.governance-item {
-  padding: 25px;
-  border: 1px solid #DDE1E6;
-  transition: .3s;
-}
-
-.governance-item:hover {
-  border-color: var(--burgundy);
-  transform: translateY(-4px);
-}
-
-.governance-item h3 { font-size: 15px; }
-
-.governance-item p {
-  font-size: 12px;
-  line-height: 2;
-  color: #596779;
 }
 
 .contact-grid {
@@ -383,6 +353,7 @@ footer {
   nav { gap: 12px; }
   nav a { font-size: 10px; }
   .services { grid-template-columns: 1fr 1fr; }
+  .equipment-list { grid-template-columns: 1fr 1fr; }
 }
 
 @media(max-width: 650px) {
@@ -411,7 +382,7 @@ footer {
   .academy, .contact-grid { grid-template-columns: 1fr; }
   .academy img { min-height: 280px; max-height: 340px; }
   .section { padding: 60px 5%; }
-  .equipment-list, .events-grid, .governance-grid { grid-template-columns: 1fr; }
+  .equipment-list, .events-grid { grid-template-columns: 1fr; }
   .academy-content { padding: 35px 6%; }
 }
 
@@ -430,18 +401,18 @@ footer {
 
 <header>
   <a href="#home">
-    <img class="logo" src="سهمم.png" alt="شعار سهم">
+    <img class="logo" src="png.سهمم" alt="شعار سهم Saham">
   </a>
 
   <button class="menu" id="menuButton" aria-label="فتح القائمة">☰</button>
 
   <nav id="navigation">
     <a href="#home">الرئيسية</a>
-    <a href="#academy">الأكاديمية</a>
-    <a href="#services">خدماتنا</a>
-    <a href="#equipment">المستلزمات</a>
-    <a href="#events">الفعاليات</a>
-    <a href="#governance">الحوكمة</a>
+    <a href="#sectors">قطاعاتنا</a>
+    <a href="#ownership">نملك وندير</a>
+    <a href="#achievements">إنجازاتنا</a>
+    <a href="#about">من نحن</a>
+    <a href="#partnerships">شراكاتنا</a>
     <a href="#contact">تواصل معنا</a>
   </nav>
 </header>
@@ -449,159 +420,126 @@ footer {
 <main>
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="eyebrow">SHAM ATHLETICS</div>
-    <h1>نصنع اليوم<br><span>أبطال الغد.</span></h1>
+    <div class="eyebrow">شركة سهم SAHAM</div>
+    <h1>شركة سهم<br><span>لإدارة وتشغيل المنشآت الرياضية والأكاديميات والفعاليات</span></h1>
     <p>
-      وجهتك الرياضية المتكاملة؛ من تطوير المواهب في الأكاديمية،
-      إلى توفير المعدات وتنظيم الفعاليات ضمن بيئة رياضية احترافية.
+      شركة سعودية متخصصة في إدارة وتشغيل المنشآت والأكاديميات الرياضية وتقديم الاستشارات الرياضية وتنظيم الفعاليات. نعمل وفق أفضل الممارسات الإدارية والرياضية لتحقيق التميز والاستدامة وتعزيز الأثر الإيجابي في المجتمع.
     </p>
-    <a class="button" href="#academy">اكتشف الأكاديمية</a>
+    <a class="button" href="#sectors">استكشف قطاعاتنا</a>
   </div>
 </section>
 
-<section class="section" id="services">
+<section class="section" id="sectors">
   <div class="section-title reveal">
-    <div class="eyebrow">WHAT WE DO</div>
-    <h2>كل احتياجاتك الرياضية <span>في مكان واحد.</span></h2>
-    <p>خدمات متكاملة للأفراد والأكاديميات والفرق والجهات.</p>
+    <div class="eyebrow">OUR SECTORS</div>
+    <h2>قطاعاتنا <span>الرئيسية</span></h2>
+    <p>حلول متكاملة في مجالات الإدارة والتطوير والاستشارات والفعاليات الرياضية.</p>
   </div>
 
   <div class="services">
     <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80" alt="تدريب كرة القدم" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="تشغيل المنشآت الرياضية" loading="lazy">
       <div class="card-content">
-        <h3>الأكاديمية الرياضية</h3>
-        <p>تدريب وتطوير المهارات واللياقة والعمل الجماعي للأطفال والناشئين.</p>
-        <a href="#academy">اكتشف البرامج</a>
+        <h3>تشغيل المنشآت الرياضية</h3>
+        <p>إدارة وتشغيل المرافق والمنشآت الرياضية بكفاءة عالية وفق أعلى معايير الجودة والسلامة لتوفير بيئة رياضية متكاملة ومستدامة.</p>
       </div>
     </article>
 
     <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?auto=format&fit=crop&w=700&q=80" alt="معدات رياضية" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="الاستشارات الرياضية" loading="lazy">
       <div class="card-content">
-        <h3>المعدات والمستلزمات</h3>
-        <p>أدوات التدريب والكرات والزي الرياضي واحتياجات الفرق والأكاديميات.</p>
-        <a href="#equipment">استكشف التجهيزات</a>
+        <h3>الاستشارات الرياضية</h3>
+        <p>تقديم حلول واستشارات متخصصة في التخطيط الاستراتيجي والتشغيل والحوكمة والتطوير المؤسسي لرفع كفاءة الأداء وتحقيق الأهداف الرياضية.</p>
       </div>
     </article>
 
     <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=80" alt="فعالية رياضية" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80" alt="تشغيل الأكاديميات الرياضية" loading="lazy">
       <div class="card-content">
-        <h3>الفعاليات والبطولات</h3>
-        <p>بطولات ومعسكرات وأيام رياضية للمدارس والفرق والمجتمع.</p>
-        <a href="#events">اكتشف الفعاليات</a>
+        <h3>تشغيل الأكاديميات الرياضية</h3>
+        <p>تصميم وتشغيل الأكاديميات الرياضية بمناهج تدريبية احترافية لتطوير المواهب وصناعة أبطال المستقبل في مختلف الألعاب الرياضية.</p>
       </div>
     </article>
 
     <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="إدارة مؤسسية" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=80" alt="الفعاليات الرياضية" loading="lazy">
       <div class="card-content">
-        <h3>الحوكمة</h3>
-        <p>سياسات تنظيمية ووضوح في المسؤوليات ومبادئ النزاهة والشفافية.</p>
-        <a href="#governance">تعرف على الحوكمة</a>
+        <h3>الفعاليات الرياضية</h3>
+        <p>تنظيم وإدارة الفعاليات والبطولات الرياضية باحترافية عالية تعزز التنافسية وتُسهم في نشر ثقافة الرياضة والمشاركة المجتمعية.</p>
       </div>
     </article>
   </div>
 </section>
 
-<section class="academy" id="academy">
-  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=85" alt="أطفال يمارسون كرة القدم" loading="lazy">
+<section class="academy" id="ownership">
+  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=85" alt="نملك وندير" loading="lazy">
 
   <div class="academy-content reveal">
-    <div class="eyebrow">SHAM ACADEMY</div>
-    <h2>كل موهبة تستحق<br><span>فرصة للانطلاق.</span></h2>
+    <div class="eyebrow">OWNERSHIP & MANAGEMENT</div>
+    <h2>نملك <span>وندير</span></h2>
     <p>
-      مساحة رياضية تساعد الأطفال والناشئين على اكتشاف قدراتهم،
-      وتطوير مهاراتهم، وبناء الثقة والانضباط وروح الفريق.
+      مشاريعنا وأكاديمياتنا الرياضية الرائدة في تطوير المواهب والمهارات:
     </p>
 
     <div class="features">
-      <div><b>01</b> برامج تدريبية</div>
-      <div><b>02</b> تطوير المهارات</div>
-      <div><b>03</b> لياقة بدنية</div>
-      <div><b>04</b> متابعة الأداء</div>
+      <div><b>•</b> أكاديمية مواهب الباحة</div>
+      <div><b>•</b> أكاديمية روز ROSE ACADEMY</div>
     </div>
 
-    <a class="button" href="#contact">استفسر عن التسجيل</a>
+    <a class="button" href="#contact">تواصل لمزيد من التفاصيل</a>
   </div>
 </section>
 
-<section class="section" id="equipment">
+<section class="section" id="achievements">
   <div class="section-title reveal">
-    <div class="eyebrow">SPORTS EQUIPMENT</div>
-    <h2>جهّز فريقك <span>للانطلاق.</span></h2>
-    <p>احتياجات الأفراد والمدربين والأكاديميات والجهات الرياضية.</p>
+    <div class="eyebrow">OUR ACHIEVEMENTS</div>
+    <h2>منجزاتنا <span>في القطاع الرياضي</span></h2>
+    <p>سجل حافل بالشركاء والإنجازات الرياضية والمجتمعية.</p>
   </div>
 
   <div class="equipment-list">
     <article class="equipment reveal">
-      <h3>معدات التدريب</h3>
-      <p>كرات، أقماع، حواجز، سلالم رشاقة وأدوات اللياقة.</p>
+      <h3>تشغيل الفئات السنية</h3>
+      <p>تشغيل الفئات السنية لنادي الباحة ونادي العين ونادي الزيتون.</p>
     </article>
     <article class="equipment reveal">
-      <h3>الملابس والأطقم</h3>
-      <p>أطقم الفرق وملابس التدريب والزي الرياضي.</p>
+      <h3>تصدير مواهب مميزة</h3>
+      <p>تصدير مواهب كروية مميزة لنادي الاتحاد ونادي الأهلي.</p>
     </article>
     <article class="equipment reveal">
-      <h3>تجهيز الأكاديميات</h3>
-      <p>مستلزمات الملاعب والمرافق حسب الاحتياج.</p>
+      <h3>إقامة فعاليات ومباريات</h3>
+      <p>إقامة فعاليات ومباريات سوبر بين عدد من الأكاديميات في جدة والقصيم.</p>
     </article>
     <article class="equipment reveal">
-      <h3>طلبات الجهات</h3>
-      <p>طلبات الكميات والتجهيزات والاستفسار عن عروض الأسعار.</p>
+      <h3>تشغيل المرافق العامة</h3>
+      <p>تشغيل مرافق الحدائق مثل ملاعب مدينة الأمير حسام بالباحة بالتعاون مع أمانة المنطقة.</p>
+    </article>
+    <article class="equipment reveal">
+      <h3>تشغيل الأنشطة الرياضية</h3>
+      <p>تشغيل الأنشطة الرياضية في نادي الزيتون.</p>
+    </article>
+    <article class="equipment reveal">
+      <h3>إدارة المرافق الرياضية</h3>
+      <p>إدارة وتشغيل المرافق الرياضية لنادي الزيتون.</p>
     </article>
   </div>
-
-  <a class="button" href="#contact">اطلب مستلزماتك</a>
 </section>
 
-<section class="section events" id="events">
-  <div class="section-title reveal">
-    <div class="eyebrow">SHAM EVENTS</div>
-    <h2>نجتمع بالرياضة، <span>ونصنع الإنجاز.</span></h2>
-    <p>تجارب رياضية تجمع المواهب والمجتمع وتفتح آفاقًا جديدة.</p>
-  </div>
-
+<section class="section events" id="about">
   <div class="events-grid">
     <article class="event reveal">
-      <h3>البطولات الرياضية</h3>
-      <p>منافسات منظمة تمنح اللاعبين فرصة لإظهار مهاراتهم وروحهم الرياضية.</p>
+      <div class="eyebrow">ABOUT US</div>
+      <h3>من نحن</h3>
+      <p>
+        شركة سعودية 100% بإدارة وطنية وتملك خبرة واسعة في المجال الرياضي والإداري والاستراتيجي والتميز المؤسسي. نعمل بشغف واحتراف لبناء منظومة رياضية مستدامة تُسهم في تحقيق مستهدفات رؤية السعودية 2030.
+      </p>
     </article>
-    <article class="event reveal">
-      <h3>المعسكرات التدريبية</h3>
-      <p>برامج مكثفة لتطوير المهارات والانضباط والعمل الجماعي.</p>
-    </article>
-    <article class="event reveal">
-      <h3>الأيام الرياضية</h3>
-      <p>أنشطة تفاعلية للمدارس والجهات والمجتمع.</p>
-    </article>
-    <article class="event reveal">
-      <h3>شراكات الفعاليات</h3>
-      <p>التعاون مع الجهات لتنظيم تجارب رياضية تناسب أهدافها.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section governance" id="governance">
-  <div class="section-title reveal">
-    <div class="eyebrow">GOVERNANCE & TRANSPARENCY</div>
-    <h2>التميّز يبدأ <span>بإدارة مسؤولة.</span></h2>
-    <p>مبادئ تساعد على بناء بيئة رياضية منظمة وموثوقة.</p>
-  </div>
-
-  <div class="governance-grid">
-    <article class="governance-item reveal">
-      <h3>السياسات واللوائح</h3>
-      <p>تنظيم الإجراءات وتوضيح القواعد ذات الصلة بالخدمات والأنشطة.</p>
-    </article>
-    <article class="governance-item reveal">
-      <h3>المسؤوليات والشفافية</h3>
-      <p>وضوح الأدوار وآليات التواصل وتحديد المسؤوليات.</p>
-    </article>
-    <article class="governance-item reveal">
-      <h3>النزاهة والسلوك</h3>
-      <p>تعزيز الاحترام والسلامة والسلوك المهني في البيئة الرياضية.</p>
+    <article class="event reveal" id="partnerships">
+      <div class="eyebrow">PARTNERSHIPS</div>
+      <h3>شراكاتنا</h3>
+      <p>
+        نؤمن بأهمية الشراكة مع المدارس التعليمية وتفعيل مبادرة ما بعد المدرسة لتعظيم الفائدة وتعزيز المشاركة المجتمعية وتنمية المواهب من سن مبكرة.
+      </p>
     </article>
   </div>
 </section>
@@ -609,11 +547,10 @@ footer {
 <section class="section" id="contact">
   <div class="contact-grid">
     <div class="reveal">
-      <div class="eyebrow">CONTACT SHAM</div>
-      <h2>خلّنا نبدأ <span>الحديث.</span></h2>
+      <div class="eyebrow">CONTACT SAHAM</div>
+      <h2>تواصل <span>معنا.</span></h2>
       <p>
-        للاستفسار عن الأكاديمية، أو طلب المعدات، أو تنظيم فعالية،
-        أو مناقشة فرصة تعاون وشراكة.
+        للاستفسار عن الخدمات الرياضية، الاستشارات، تشغيل الأكاديميات والمنشآت، أو طلب شراكات وتعاون.
       </p>
     </div>
 
@@ -623,12 +560,12 @@ footer {
 
       <select id="type" required>
         <option value="">نوع الطلب</option>
-        <option>التسجيل في الأكاديمية</option>
-        <option>المعدات والمستلزمات الرياضية</option>
-        <option>تنظيم فعالية أو بطولة</option>
+        <option>تشغيل منشأة رياضية</option>
+        <option>استشارات رياضية</option>
+        <option>تشغيل أكاديمية رياضية</option>
+        <option>تنظيم فعالية رياضية</option>
         <option>شراكة أو تعاون</option>
-        <option>استفسار عن الحوكمة</option>
-        <option>طلب آخر</option>
+        <option>استفسار آخر</option>
       </select>
 
       <textarea id="message" rows="4" placeholder="اكتب تفاصيل طلبك"></textarea>
@@ -641,9 +578,9 @@ footer {
 </main>
 
 <footer>
-  <strong>SHAM ATHLETICS</strong>
-  <div>نصنع اليوم أبطال الغد.</div>
-  <div>© <span id="year"></span> SHAM Athletics</div>
+  <strong>شركة سهم | SAHAM</strong>
+  <div>لإدارة وتشغيل المنشآت الرياضية والأكاديميات والفعاليات</div>
+  <div>© <span id="year"></span> Saham Company</div>
 </footer>
 
 <script>
@@ -679,7 +616,7 @@ document.getElementById('contactForm').addEventListener('submit', event => {
   const type = document.getElementById('type').value;
   const message = document.getElementById('message').value.trim();
 
-  const subject = encodeURIComponent('طلب جديد - SHAM Athletics');
+  const subject = encodeURIComponent('طلب جديد - شركة سهم');
   const body = encodeURIComponent(
     'الاسم: ' + name +
     '\nالبريد: ' + email +
@@ -687,12 +624,11 @@ document.getElementById('contactForm').addEventListener('submit', event => {
     '\nالتفاصيل: ' + message
   );
 
-  // استبدلي البريد بالعنوان الرسمي للجهة.
   const contactEmail = 'YOUR_EMAIL@example.com';
 
   if (contactEmail === 'YOUR_EMAIL@example.com') {
     document.getElementById('formNote').textContent =
-      'النموذج جاهز. يلزم إضافة بريد SHAM الرسمي داخل الكود لتفعيل إرسال الطلبات.';
+      'النموذج جاهز. يلزم إضافة بريد الشركة الرسمي داخل الكود لتفعيل إرسال الطلبات.';
     return;
   }
 
