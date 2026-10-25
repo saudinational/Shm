@@ -242,27 +242,32 @@ footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:v
     </div>
     
     <!-- النموذج المعدل المربوط مباشرة -->
-    <form action="https://formsubmit.co/el/rarilo" method="POST">
-      <input type="hidden" name="_subject" value="طلب جديد من موقع شركة سهم">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
+<form action="https://api.web3forms.com/submit" method="POST">
+  <!-- مفتاح Access Key الخاص بك -->
+  <input type="hidden" name="access_key" value="B0c310ac-c507-44ca-96ae-4e173e2002cd">
 
-      <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" aria-label="الاسم الكامل" required>
-      <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" aria-label="البريد الإلكتروني" required>
-      
-      <select name="نوع الطلب" aria-label="نوع الطلب" required>
-        <option value="">نوع الطلب</option>
-        <option value="تشغيل منشأة رياضية">تشغيل منشأة رياضية</option>
-        <option value="استشارات رياضية">استشارات رياضية</option>
-        <option value="تشغيل أكاديمية رياضية">تشغيل أكاديمية رياضية</option>
-        <option value="تنظيم فعالية رياضية">تنظيم فعالية رياضية</option>
-        <option value="شراكة أو تعاون">شراكة أو تعاون</option>
-        <option value="استفسار آخر">استفسار آخر</option>
-      </select>
-      
-      <textarea name="تفاصيل الطلب" rows="4" placeholder="اكتب تفاصيل طلبك" aria-label="تفاصيل الطلب"></textarea>
-      <button class="button" type="submit">إرسال الطلب</button>
-    </form>
+  <!-- إعدادات عنوان الرسالة والحماية من البوتات -->
+  <input type="hidden" name="subject" value="طلب جديد من موقع شركة سهم">
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+  <!-- حقول البيانات -->
+  <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required>
+  <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" required>
+  
+  <select name="نوع الطلب" required>
+    <option value="">نوع الطلب</option>
+    <option value="تشغيل منشأة رياضية">تشغيل منشأة رياضية</option>
+    <option value="استشارات رياضية">استشارات رياضية</option>
+    <option value="تشغيل أكاديمية رياضية">تشغيل أكاديمية رياضية</option>
+    <option value="تنظيم فعالية رياضية">تنظيم فعالية رياضية</option>
+    <option value="شراكة أو تعاون">شراكة أو تعاون</option>
+    <option value="استفسار آخر">استفسار آخر</option>
+  </select>
+
+  <textarea name="تفاصيل الطلب" rows="4" placeholder="اكتب تفاصيل طلبك"></textarea>
+  <button class="button" type="submit">إرسال الطلب</button>
+</form>
+
   </div>
 </section>
 </main>
