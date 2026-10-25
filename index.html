@@ -1,418 +1,126 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شركة سهم | لإدارة وتشغيل المنشآت الرياضية والأكاديميات والفعاليات</title>
-
+<title>شركة سهم | لإدارة وتشغيل المنشآت الرياضية</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --navy: #061D3A;
-  --navy2: #0A2A4C;
-  --burgundy: #B70F35;
-  --white: #F7F7F7;
-  --gray: #B9C5D2;
+  --navy:#061D3A;
+  --navy2:#0A2A4C;
+  --burgundy:#B70F35;
+  --white:#F7F7F7;
+  --gray:#B9C5D2;
 }
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--navy);
-  color: var(--white);
-  font-family: 'Alexandria', sans-serif;
-}
-
-a { text-decoration: none; color: inherit; }
-
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {margin:0;background:var(--navy);color:var(--white);font-family:'Alexandria',sans-serif}
+a {text-decoration:none;color:inherit}
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 6%;
-  background: rgba(6,29,58,.95);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid #ffffff20;
+  position:sticky;top:0;z-index:100;display:flex;
+  justify-content:space-between;align-items:center;
+  padding:12px 6%;background:rgba(6,29,58,.96);
+  backdrop-filter:blur(15px);border-bottom:1px solid #ffffff20
 }
-
-.logo {
-  width: 130px;
-  height: 58px;
-  object-fit: contain;
-}
-
-nav {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-}
-
-nav a {
-  font-size: 12px;
-  transition: color .3s;
-}
-
-nav a:hover { color: #E51B48; }
-
-.menu {
-  display: none;
-  background: none;
-  color: white;
-  border: 1px solid #ffffff40;
-  padding: 8px 12px;
-  font-size: 20px;
-}
-
+.logo {width:130px;height:58px;object-fit:contain}
+nav {display:flex;gap:20px;align-items:center}
+nav a {font-size:12px;transition:color .3s}
+nav a:hover {color:#E51B48}
+.menu {display:none;background:none;color:white;border:1px solid #ffffff40;padding:8px 12px;font-size:20px;cursor:pointer}
 .hero {
-  min-height: 680px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(270deg, #061D3A 5%, #061D3Ad9 40%, #061D3A25 100%),
-    url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1800&q=85')
-    center/cover;
+  min-height:620px;display:flex;align-items:center;overflow:hidden;
+  background:linear-gradient(270deg,#061D3A 5%,#061D3Ad9 45%,#061D3A40 100%),
+  url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1800&q=85') center/cover
 }
-
-.hero-content {
-  max-width: 680px;
-  padding: 70px 8%;
-  animation: appear 1.2s ease both;
+.hero-content {max-width:760px;padding:70px 8%;animation:appear 1s ease both}
+.eyebrow {color:#F04463;font-size:12px;letter-spacing:1px}
+h1 {font-size:clamp(32px,5vw,58px);line-height:1.6;margin:20px 0}
+h1 span,h2 span {color:#E51B48}
+.hero p {color:var(--gray);max-width:620px;line-height:2.2;font-size:14px}
+.button {display:inline-block;padding:13px 24px;margin-top:15px;background:var(--burgundy);color:white;border:1px solid var(--burgundy);font:inherit;font-size:13px;cursor:pointer;transition:.3s}
+.button:hover {background:transparent;transform:translateY(-3px)}
+.section {padding:80px 7%;scroll-margin-top:80px}
+.section-title {margin-bottom:35px}
+.section-title h2 {font-size:clamp(27px,4vw,42px);margin:12px 0}
+.section-title p {color:var(--gray);font-size:13px;line-height:2}
+.services {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card {background:var(--navy2);border:1px solid #ffffff18;overflow:hidden;transition:.3s}
+.card:hover {transform:translateY(-6px);border-color:var(--burgundy)}
+.card img {width:100%;height:190px;object-fit:cover;display:block}
+.card-content {padding:20px}
+.card h3 {font-size:16px}
+.card p,.equipment p,.event p {font-size:12px;line-height:2.2;color:var(--gray)}
+.academy {display:grid;grid-template-columns:1fr 1fr;background:#F7F7F7;color:var(--navy)}
+.academy>img {width:100%;height:100%;min-height:420px;object-fit:cover}
+.academy-content {padding:50px 8%;align-self:center}
+.academy-content h2 {font-size:clamp(28px,4vw,42px)}
+.academy-content p {font-size:13px;line-height:2.2;color:#536173}
+.features {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
+.features div {border-top:1px solid #D7DDE4;padding:13px 0;font-size:13px;font-weight:600}
+.features b {color:var(--burgundy)}
+.equipment-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.equipment {background:var(--navy2);padding:23px;border-right:3px solid var(--burgundy);transition:.3s}
+.equipment:hover {background:#10385E;transform:translateY(-4px)}
+.equipment h3 {font-size:15px}
+.events {background:linear-gradient(#061D3Ae8,#061D3Ae8),url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85') center/cover}
+.events-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.event {padding:28px;background:#ffffff0b;border:1px solid #ffffff30}
+.event h3 {font-size:20px}
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-grid p {color:var(--gray);font-size:13px;line-height:2.3}
+form {display:grid;gap:14px}
+input,select,textarea {width:100%;padding:14px;color:white;background:var(--navy2);border:1px solid #ffffff30;font:inherit;font-size:12px;border-radius:0}
+input::placeholder,textarea::placeholder {color:#B9C5D2}
+select option {background:var(--navy2);color:white}
+textarea {resize:vertical}
+footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:var(--gray);font-size:11px;line-height:2.5}
+.reveal {opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible {opacity:1;transform:translateY(0)}
+@keyframes appear {from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:950px) {
+  nav {gap:10px}
+  nav a {font-size:10px}
+  .services {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .equipment-list {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
-.eyebrow {
-  color: #E51B48;
-  font-size: 12px;
-  letter-spacing: 2px;
+@media(max-width:650px) {
+  header {padding:10px 5%}
+  .logo {width:105px;height:48px}
+  .menu {display:block}
+  nav {display:none;position:absolute;top:100%;right:0;left:0;padding:18px 5%;background:var(--navy);flex-direction:column;align-items:stretch}
+  nav.open {display:flex}
+  nav a {font-size:13px;padding:8px}
+  .hero {min-height:560px;background-position:40% center}
+  .hero-content {padding:55px 6%}
+  .section {padding:55px 5%}
+  .services {gap:10px}
+  .card img {height:130px}
+  .card-content {padding:12px}
+  .card h3 {font-size:13px}
+  .card p {font-size:11px}
+  .academy,.contact-grid,.events-grid {grid-template-columns:1fr}
+  .academy>img {min-height:260px;max-height:330px}
+  .academy-content {padding:30px 6%}
+  .equipment-list {grid-template-columns:1fr}
 }
-
-h1 {
-  font-size: clamp(32px, 5vw, 60px);
-  line-height: 1.4;
-  margin: 20px 0;
-}
-
-h1 span, h2 span { color: #E51B48; }
-
-.hero p {
-  color: var(--gray);
-  max-width: 520px;
-  line-height: 2.2;
-  font-size: 14px;
-}
-
-.button {
-  display: inline-block;
-  padding: 14px 25px;
-  margin-top: 20px;
-  background: var(--burgundy);
-  color: white;
-  border: 1px solid var(--burgundy);
-  transition: .3s;
-  font-size: 13px;
-  font-family: inherit;
-}
-
-.button:hover {
-  background: transparent;
-  transform: translateY(-3px);
-}
-
-section { scroll-margin-top: 85px; }
-
-.section {
-  padding: 90px 7%;
-}
-
-.section-title {
-  margin-bottom: 40px;
-}
-
-.section-title h2 {
-  font-size: clamp(28px, 4vw, 45px);
-  margin: 10px 0;
-}
-
-.section-title p {
-  color: var(--gray);
-  font-size: 13px;
-  line-height: 2;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.card {
-  background: var(--navy2);
-  border: 1px solid #ffffff18;
-  overflow: hidden;
-  transition: .4s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--burgundy);
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform .6s;
-}
-
-.card:hover img { transform: scale(1.05); }
-
-.card-content { padding: 22px; }
-
-.card h3 { font-size: 17px; }
-
-.card p {
-  font-size: 12px;
-  line-height: 2;
-  color: var(--gray);
-}
-
-.card a {
-  color: #F04463;
-  font-size: 12px;
-}
-
-.academy {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #F7F7F7;
-  color: var(--navy);
-}
-
-.academy img {
-  width: 100%;
-  height: 100%;
-  min-height: 440px;
-  object-fit: cover;
-}
-
-.academy-content {
-  padding: 55px 8%;
-  align-self: center;
-}
-
-.academy-content h2 {
-  font-size: clamp(28px, 4vw, 43px);
-  line-height: 1.7;
-}
-
-.academy-content p {
-  font-size: 13px;
-  line-height: 2.3;
-  color: #536173;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 25px 0;
-}
-
-.features div {
-  border-top: 1px solid #D7DDE4;
-  padding: 13px 0;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.features b { color: var(--burgundy); }
-
-.equipment-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.equipment {
-  background: #0A2A4C;
-  padding: 24px;
-  border-right: 3px solid var(--burgundy);
-  transition: .3s;
-}
-
-.equipment:hover {
-  background: #10385E;
-  transform: translateY(-4px);
-}
-
-.equipment h3 { font-size: 16px; }
-
-.equipment p {
-  color: var(--gray);
-  font-size: 12px;
-  line-height: 2;
-}
-
-.events {
-  background:
-    linear-gradient(#061D3Ae8, #061D3Ae8),
-    url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85')
-    center/cover fixed;
-}
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.event {
-  padding: 30px;
-  background: #ffffff0b;
-  border: 1px solid #ffffff30;
-  transition: .3s;
-}
-
-.event:hover {
-  border-color: var(--burgundy);
-  background: #ffffff12;
-}
-
-.event h3 { font-size: 20px; }
-
-.event p {
-  color: var(--gray);
-  font-size: 13px;
-  line-height: 2;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-}
-
-.contact-grid p {
-  color: var(--gray);
-  font-size: 13px;
-  line-height: 2.3;
-}
-
-form { display: grid; gap: 14px; }
-
-input, select, textarea {
-  width: 100%;
-  padding: 14px;
-  color: white;
-  background: var(--navy2);
-  border: 1px solid #ffffff30;
-  font: inherit;
-  font-size: 12px;
-  border-radius: 0;
-}
-
-textarea { resize: vertical; }
-
-form .button { cursor: pointer; }
-
-footer {
-  padding: 30px 6%;
-  text-align: center;
-  border-top: 1px solid #ffffff20;
-  color: var(--gray);
-  font-size: 11px;
-  line-height: 2.5;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .8s, transform .8s;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media(max-width: 900px) {
-  nav { gap: 12px; }
-  nav a { font-size: 10px; }
-  .services { grid-template-columns: 1fr 1fr; }
-  .equipment-list { grid-template-columns: 1fr 1fr; }
-}
-
-@media(max-width: 650px) {
-  header { padding: 10px 5%; }
-  .logo { width: 105px; height: 48px; }
-  .menu { display: block; }
-  nav {
-    display: none;
-    position: absolute;
-    top: 68px;
-    right: 0;
-    left: 0;
-    padding: 20px;
-    background: var(--navy);
-    flex-direction: column;
-    align-items: stretch;
-  }
-  nav.open { display: flex; }
-  nav a { font-size: 13px; padding: 7px; }
-  .hero { min-height: 600px; background-position: 40% center; }
-  .hero-content { padding: 60px 6%; }
-  .services { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .card img { height: 140px; }
-  .card-content { padding: 14px; }
-  .card h3 { font-size: 14px; }
-  .academy, .contact-grid { grid-template-columns: 1fr; }
-  .academy img { min-height: 280px; max-height: 340px; }
-  .section { padding: 60px 5%; }
-  .equipment-list, .events-grid { grid-template-columns: 1fr; }
-  .academy-content { padding: 35px 6%; }
-}
-
-@media(prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-  .reveal { opacity: 1; transform: none; }
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal {opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
 
-
 <header>
-  <a href="#home">
-    <img
-      class="logo"
-      src="png.سههم"
-      alt="شعار سهم"
-    >
+  <a href="#home" aria-label="شركة سهم - الرئيسية">
+    <img class="logo" src="png.سههم" alt="شعار سهم">
   </a>
-</header>
-
-
-  <button class="menu" id="menuButton" aria-label="فتح القائمة">☰</button>
-
+  <button class="menu" id="menuButton" aria-label="فتح القائمة" aria-expanded="false">☰</button>
   <nav id="navigation">
     <a href="#home">الرئيسية</a>
     <a href="#sectors">قطاعاتنا</a>
@@ -429,70 +137,47 @@ footer {
   <div class="hero-content">
     <div class="eyebrow">شركة سهم SAHAM</div>
     <h1>شركة سهم<br><span>لإدارة وتشغيل المنشآت الرياضية والأكاديميات والفعاليات</span></h1>
-    <p>
-      شركة سعودية متخصصة في إدارة وتشغيل المنشآت والأكاديميات الرياضية وتقديم الاستشارات الرياضية وتنظيم الفعاليات. نعمل وفق أفضل الممارسات الإدارية والرياضية لتحقيق التميز والاستدامة وتعزيز الأثر الإيجابي في المجتمع.
-    </p>
+    <p>شركة سعودية متخصصة في إدارة وتشغيل المنشآت والأكاديميات الرياضية وتقديم الاستشارات الرياضية وتنظيم الفعاليات. نعمل وفق أفضل الممارسات الإدارية والرياضية لتحقيق التميز والاستدامة وتعزيز الأثر الإيجابي في المجتمع.</p>
     <a class="button" href="#sectors">استكشف قطاعاتنا</a>
   </div>
 </section>
 
 <section class="section" id="sectors">
   <div class="section-title reveal">
-    <div class="eyebrow">OUR SECTORS</div>
-    <h2>قطاعاتنا <span>الرئيسية</span></h2>
-    <p>حلول متكاملة في مجالات الإدارة والتطوير والاستشارات والفعاليات الرياضية.</p>
+    <div class="eyebrow">OUR SERVICES</div>
+    <h2>قطاعاتنا <span>الرياضية</span></h2>
+    <p>حلول متكاملة لإدارة وتشغيل وتطوير المشاريع والأنشطة الرياضية.</p>
   </div>
-
   <div class="services">
     <article class="card reveal">
       <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="تشغيل المنشآت الرياضية" loading="lazy">
-      <div class="card-content">
-        <h3>تشغيل المنشآت الرياضية</h3>
-        <p>إدارة وتشغيل المرافق والمنشآت الرياضية بكفاءة عالية وفق أعلى معايير الجودة والسلامة لتوفير بيئة رياضية متكاملة ومستدامة.</p>
-      </div>
+      <div class="card-content"><h3>تشغيل المنشآت الرياضية</h3><p>إدارة وتشغيل المرافق والمنشآت الرياضية بكفاءة عالية وفق معايير الجودة والسلامة.</p></div>
     </article>
-
     <article class="card reveal">
       <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="الاستشارات الرياضية" loading="lazy">
-      <div class="card-content">
-        <h3>الاستشارات الرياضية</h3>
-        <p>تقديم حلول واستشارات متخصصة في التخطيط الاستراتيجي والتشغيل والحوكمة والتطوير المؤسسي لرفع كفاءة الأداء وتحقيق الأهداف الرياضية.</p>
-      </div>
+      <div class="card-content"><h3>الاستشارات الرياضية</h3><p>حلول متخصصة في التخطيط الاستراتيجي والتشغيل والحوكمة والتطوير المؤسسي.</p></div>
     </article>
-
     <article class="card reveal">
-      <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80" alt="تشغيل الأكاديميات الرياضية" loading="lazy">
-      <div class="card-content">
-        <h3>تشغيل الأكاديميات الرياضية</h3>
-        <p>تصميم وتشغيل الأكاديميات الرياضية بمناهج تدريبية احترافية لتطوير المواهب وصناعة أبطال المستقبل في مختلف الألعاب الرياضية.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80" alt="الأكاديميات الرياضية" loading="lazy">
+      <div class="card-content"><h3>تشغيل الأكاديميات الرياضية</h3><p>تطوير المواهب من خلال برامج تدريبية احترافية في مختلف الألعاب الرياضية.</p></div>
     </article>
-
     <article class="card reveal">
       <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=80" alt="الفعاليات الرياضية" loading="lazy">
-      <div class="card-content">
-        <h3>الفعاليات الرياضية</h3>
-        <p>تنظيم وإدارة الفعاليات والبطولات الرياضية باحترافية عالية تعزز التنافسية وتُسهم في نشر ثقافة الرياضة والمشاركة المجتمعية.</p>
-      </div>
+      <div class="card-content"><h3>الفعاليات الرياضية</h3><p>تنظيم وإدارة الفعاليات والبطولات لتعزيز التنافسية والمشاركة المجتمعية.</p></div>
     </article>
   </div>
 </section>
 
 <section class="academy" id="ownership">
-  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=85" alt="نملك وندير" loading="lazy">
-
+  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=85" alt="الأكاديميات الرياضية" loading="lazy">
   <div class="academy-content reveal">
     <div class="eyebrow">OWNERSHIP & MANAGEMENT</div>
     <h2>نملك <span>وندير</span></h2>
-    <p>
-      مشاريعنا وأكاديمياتنا الرياضية الرائدة في تطوير المواهب والمهارات:
-    </p>
-
+    <p>مشاريعنا وأكاديمياتنا الرياضية الرائدة في تطوير المواهب والمهارات.</p>
     <div class="features">
       <div><b>•</b> أكاديمية مواهب الباحة</div>
       <div><b>•</b> أكاديمية روز ROSE ACADEMY</div>
     </div>
-
     <a class="button" href="#contact">تواصل لمزيد من التفاصيل</a>
   </div>
 </section>
@@ -503,32 +188,13 @@ footer {
     <h2>منجزاتنا <span>في القطاع الرياضي</span></h2>
     <p>سجل حافل بالشركاء والإنجازات الرياضية والمجتمعية.</p>
   </div>
-
   <div class="equipment-list">
-    <article class="equipment reveal">
-      <h3>تشغيل الفئات السنية</h3>
-      <p>تشغيل الفئات السنية لنادي الباحة ونادي العين ونادي الزيتون.</p>
-    </article>
-    <article class="equipment reveal">
-      <h3>تصدير مواهب مميزة</h3>
-      <p>تصدير مواهب كروية مميزة لنادي الاتحاد ونادي الأهلي.</p>
-    </article>
-    <article class="equipment reveal">
-      <h3>إقامة فعاليات ومباريات</h3>
-      <p>إقامة فعاليات ومباريات سوبر بين عدد من الأكاديميات في جدة والقصيم.</p>
-    </article>
-    <article class="equipment reveal">
-      <h3>تشغيل المرافق العامة</h3>
-      <p>تشغيل مرافق الحدائق مثل ملاعب مدينة الأمير حسام بالباحة بالتعاون مع أمانة المنطقة.</p>
-    </article>
-    <article class="equipment reveal">
-      <h3>تشغيل الأنشطة الرياضية</h3>
-      <p>تشغيل الأنشطة الرياضية في نادي الزيتون.</p>
-    </article>
-    <article class="equipment reveal">
-      <h3>إدارة المرافق الرياضية</h3>
-      <p>إدارة وتشغيل المرافق الرياضية لنادي الزيتون.</p>
-    </article>
+    <article class="equipment reveal"><h3>تشغيل الفئات السنية</h3><p>تشغيل الفئات السنية لنادي الباحة ونادي العين ونادي الزيتون.</p></article>
+    <article class="equipment reveal"><h3>تصدير مواهب مميزة</h3><p>تصدير مواهب كروية مميزة لنادي الاتحاد ونادي الأهلي.</p></article>
+    <article class="equipment reveal"><h3>إقامة فعاليات ومباريات</h3><p>إقامة فعاليات ومباريات سوبر بين عدد من الأكاديميات في جدة والقصيم.</p></article>
+    <article class="equipment reveal"><h3>تشغيل المرافق العامة</h3><p>تشغيل مرافق الحدائق مثل ملاعب مدينة الأمير حسام بالباحة بالتعاون مع أمانة المنطقة.</p></article>
+    <article class="equipment reveal"><h3>تشغيل الأنشطة الرياضية</h3><p>تشغيل الأنشطة الرياضية في نادي الزيتون.</p></article>
+    <article class="equipment reveal"><h3>إدارة المرافق الرياضية</h3><p>إدارة وتشغيل المرافق الرياضية لنادي الزيتون.</p></article>
   </div>
 </section>
 
@@ -537,16 +203,12 @@ footer {
     <article class="event reveal">
       <div class="eyebrow">ABOUT US</div>
       <h3>من نحن</h3>
-      <p>
-        شركة سعودية 100% بإدارة وطنية وتملك خبرة واسعة في المجال الرياضي والإداري والاستراتيجي والتميز المؤسسي. نعمل بشغف واحتراف لبناء منظومة رياضية مستدامة تُسهم في تحقيق مستهدفات رؤية السعودية 2030.
-      </p>
+      <p>شركة سعودية 100% بإدارة وطنية وخبرة في المجال الرياضي والإداري والاستراتيجي والتميز المؤسسي. نعمل لبناء منظومة رياضية مستدامة تُسهم في تحقيق مستهدفات رؤية السعودية 2030.</p>
     </article>
     <article class="event reveal" id="partnerships">
       <div class="eyebrow">PARTNERSHIPS</div>
       <h3>شراكاتنا</h3>
-      <p>
-        نؤمن بأهمية الشراكة مع المدارس التعليمية وتفعيل مبادرة ما بعد المدرسة لتعظيم الفائدة وتعزيز المشاركة المجتمعية وتنمية المواهب من سن مبكرة.
-      </p>
+      <p>نؤمن بأهمية الشراكة مع المدارس التعليمية وتفعيل مبادرة ما بعد المدرسة لتعزيز المشاركة المجتمعية وتنمية المواهب من سن مبكرة.</p>
     </article>
   </div>
 </section>
@@ -556,47 +218,24 @@ footer {
     <div class="reveal">
       <div class="eyebrow">CONTACT SAHAM</div>
       <h2>تواصل <span>معنا.</span></h2>
-      <p>
-        للاستفسار عن الخدمات الرياضية، الاستشارات، تشغيل الأكاديميات والمنشآت، أو طلب شراكات وتعاون.
-      </p>
+      <p>للاستفسار عن الخدمات الرياضية والاستشارات وتشغيل الأكاديميات والمنشآت أو طلب شراكات وتعاون، أرسل لنا تفاصيل طلبك.</p>
     </div>
-
-
-<form action="https://formsubmit.co/el/rarilo"
-      method="POST">
-
-  <input type="hidden" name="_subject"
-         value="طلب جديد - شركة سهم">
-
-  <input type="hidden" name="_template" value="table">
-
-  <input type="text" name="name"
-         placeholder="الاسم الكامل" required>
-
-  <input type="email" name="email"
-         placeholder="البريد الإلكتروني" required>
-
-  <select name="type" required>
-    <option value="">نوع الطلب</option>
-    <option>تشغيل منشأة رياضية</option>
-    <option>استشارات رياضية</option>
-    <option>تشغيل أكاديمية رياضية</option>
-    <option>تنظيم فعالية رياضية</option>
-    <option>شراكة أو تعاون</option>
-    <option>استفسار آخر</option>
-  </select>
-
-  <textarea name="message" rows="4"
-            placeholder="اكتب تفاصيل طلبك"></textarea>
-
-  <button class="button" type="submit">إرسال الطلب</button>
-</form>
-
-
-      <textarea id="message" rows="4" placeholder="اكتب تفاصيل طلبك"></textarea>
-
-      <button class="button" type="submit">تجهيز رسالة الطلب</button>
-      <p id="formNote" style="font-size:11px"></p>
+    <form action="https://formsubmit.co/el/rarlio" method="POST">
+      <input type="hidden" name="_subject" value="طلب جديد - شركة سهم">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="name" placeholder="الاسم الكامل" aria-label="الاسم الكامل" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" aria-label="البريد الإلكتروني" required>
+      <select name="type" aria-label="نوع الطلب" required>
+        <option value="">نوع الطلب</option>
+        <option value="تشغيل منشأة رياضية">تشغيل منشأة رياضية</option>
+        <option value="استشارات رياضية">استشارات رياضية</option>
+        <option value="تشغيل أكاديمية رياضية">تشغيل أكاديمية رياضية</option>
+        <option value="تنظيم فعالية رياضية">تنظيم فعالية رياضية</option>
+        <option value="شراكة أو تعاون">شراكة أو تعاون</option>
+        <option value="استفسار آخر">استفسار آخر</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="اكتب تفاصيل طلبك" aria-label="تفاصيل الطلب"></textarea>
+      <button class="button" type="submit">إرسال الطلب</button>
     </form>
   </div>
 </section>
@@ -613,11 +252,15 @@ const menuButton = document.getElementById('menuButton');
 const navigation = document.getElementById('navigation');
 
 menuButton.addEventListener('click', () => {
-  navigation.classList.toggle('open');
+  const isOpen = navigation.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(isOpen));
 });
 
 navigation.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navigation.classList.remove('open'));
+  link.addEventListener('click', () => {
+    navigation.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  });
 });
 
 const observer = new IntersectionObserver(entries => {
@@ -627,39 +270,10 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, {threshold: 0.12});
 
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
-
 document.getElementById('year').textContent = new Date().getFullYear();
-
-document.getElementById('contactForm').addEventListener('submit', event => {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const type = document.getElementById('type').value;
-  const message = document.getElementById('message').value.trim();
-
-  const subject = encodeURIComponent('طلب جديد - شركة سهم');
-  const body = encodeURIComponent(
-    'الاسم: ' + name +
-    '\nالبريد: ' + email +
-    '\nنوع الطلب: ' + type +
-    '\nالتفاصيل: ' + message
-  );
-
-  const contactEmail = 'YOUR_EMAIL@example.com';
-
-  if (contactEmail === 'YOUR_EMAIL@example.com') {
-document.getElementById('contactForm').addEventListener('submit'
-      'النموذج جاهز. يلزم إضافة بريد الشركة الرسمي داخل الكود لتفعيل إرسال الطلبات.';
-    return;
-  }
-
-  window.location.href =
-    'mailto:' + contactEmail + '?subject=' + subject + '&body=' + body;
-});
 </script>
 
 </body>
